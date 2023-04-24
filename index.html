@@ -1,0 +1,93 @@
+<!-- 
+Created by: Anand Seshadri
+GMU ID: G01351350 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- JQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="javascript" href="./bootstrap.min.js">
+    <!-- Stylesheet for Landing page linked -->
+    <link rel="stylesheet" href="assets/media/stylesheets/style.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- Header contains GMU logo and CS Department page and Home page links  -->
+    <header class="header">
+
+      <!-- Bootstrap Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-green nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/media/images/CS-dept-logo.png" height="40px" alt="CS Department Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- the loadPage function is called with the name of the page as an argument. The function will use
+               XMLHttpRequest to fetch the content of the page and set it as the innerHTML of the main section -->
+            <ul class="navbar-nav flex">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="department.html">CS Department Info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="survey-form.html">Student Survey Form</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container main">
+        <!-- Personal Image and Introduction -->
+      <section class="flex">
+        <img class="img" src="assets/media/images/personal-image.jpeg" alt="Group photo" />
+        <article>
+          <h1 class="intro-heading">Introduction</h1>
+          <p>
+            Hey there!
+            I'm Anand, a Master's student of Computer Science at George Mason University and I'm currently in my third semester.
+            Prior to my master's program, I completed my B.E. in Computer Engineering and then worked as a QA Automation Engineer in a software company in the networking domain for two and a half years. After this, I pursued my interests and joined a full-stack web development boot camp. I am skilled in technologies like HTML, CSS, Javascript, MongoDB, Node, Express, and React, using which I have made some personal projects.
+            Cheers!
+          </p>
+          <p>
+            I'm interested in MERN Stack and am looking for a summer internship at GMU. Hoping to connect with you soon.
+          </p>
+          <!-- Education and Experience -->
+          <ol>
+            <label for="ol">Education</label>
+            <li>Geroge Mason University - MS in Computer Science</li>
+            <li>University of Pune - BE Computer Engineering</li>
+            <li>AltCampus - Web development Bootcamp</li>
+          </ol>
+          <ol>
+            <label for="ol">Work Experience</label>
+            <li>NMSWorks Software Pvt. Ltd. - QA Engineer</li>
+            <li>INTO Mason - Website Management Assistant</li>
+          </ol>
+        </article>
+      </section>
+    </main>
+    <!-- Footer section of the landing page -->
+    
+    <footer>
+      <small>&copy; Anand Seshadri | G01351350 | 2023</small>
+    </footer>
+    <!-- <script src="./script.js"></script> -->
+  </body>
+</html>

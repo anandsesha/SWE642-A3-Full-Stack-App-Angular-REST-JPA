@@ -1,0 +1,205 @@
+<!-- 
+Created by: Anand Seshadri
+GMU ID: G01351350 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Department Information Page</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="javascript" href="./bootstrap.min.js">
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="assets/media/stylesheets/department.css">
+</head>
+<body>
+    <!-- Header contains CS Department logo and Page link -->
+    <!-- <header class="header p-4">
+        <div class="container-fluid d-flex flex-row justify-content-between">
+            <img src="assets/media/images/CS-dept-logo.png" alt="CS department logo">
+            <nav class="nav-bar">
+                <a href="./survey-form.html">Student Survey Form</a>
+                <a href="./index.html">Home</a>
+            </nav> 
+        </div>
+    </header> -->
+
+    <header class="header">
+
+      <!-- Bootstrap Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-green nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/media/images/CS-dept-logo.png" height="40px" alt="CS Department Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- the loadPage function is called with the name of the page as an argument. The function will use
+               XMLHttpRequest to fetch the content of the page and set it as the innerHTML of the main section -->
+            <ul class="navbar-nav ml-auto flex">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="department.html">CS Department Info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="survey-form.html">Student Survey Form</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+        <!-- Section 1 : Department Info with couple of paragraphs-->
+        <section class="pb-4">
+            <div class="container p-4">
+                <h1 class=" h1 pr-2 mb-5 d-flex justify-content-center">Computer Science Department Information Page</h1>
+                <h2 class="h2">Department Description</h1>
+                <p class="about-para p-4">
+                    The School of Computing provides an array of computing and related courses to students from all backgrounds and at all levels. It includes the departments of Computer Science, Information Sciences and Technology, and Statistics.
+                </p>    
+                <h2 class="h2">Why Study here</h2>
+                <p class="why-para p-4">
+                    As global companies and government agencies create millions of digital jobs, the demand for workers with computing and data skills is skyrocketing. A degree or certificate in those fields from Mason will put you among the most sought-after candidates anywhere in the world. 
+                    Mason students learn in classrooms, offices, and labs that emphasize hands-on teaching, design project development, and cross-disciplinary initiatives.
+                    <br> 
+                    Our campuses in Fairfax, Arlington, and Manassas serve thousands of students, and that number will rise with the new completion of Mason Square. Mason has pledged to invest more than $250 million to grow programs, hire large numbers of new faculty and expand its campus in Arlington to 1.2 million square feet. 
+                </p>
+            </div> 
+        </section>
+        <!-- Section 2 :  MS Degrees List at the CS Department-->
+        <section class="pb-4">
+            <div class="container">
+                <h3 class="h3 mt-2 mb-2">MS Degrees List</h3>
+                <ul class="list-group border border-dark mt-4 mb-4">
+                    <li class="list-group-item list-group-item-action">Computer Science MS</li>
+                    <li class="list-group-item list-group-item-action">Information Syetems (INFS) MS</li>
+                    <li class="list-group-item list-group-item-action">Information Security and Assurance (ISA) MS</li>
+                    <li class="list-group-item list-group-item-action">Software Engineering (SWE) MS</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Section 3:  Required courses for each degree-->
+        <section class="pb-5">
+            <div class="container">
+                <h3 class="h3 p-2">Required Courses</h3>
+                <p class="p-2">The table below shows the required courses for each MS degree program using a table with the Degree name, course number and required course name as the columns.</p>
+                <table class="table table-bordered">
+                    <!-- For MS in CS -->
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>Degree Name</th>
+                        <th>Course Number</th>
+                        <th>Required Course Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Computer Science MS</td>
+                        <td>CS530</td>
+                        <td>Mathematical Foundations of CS</td>
+                      </tr>
+                      <tr>
+                        <td>Computer Science MS</td>
+                        <td>CS531</td>
+                        <td>Computer Systems and Programming</td>
+                      </tr>
+                      <tr>
+                        <td>Computer Science MS</td>
+                        <td>CS583</td>
+                        <td>Analysis of Algorithms</td>
+                      </tr>
+                    </tbody>
+
+
+                    <!-- For INFS -->
+                    <thead class="thead-dark">
+                        <tr>
+                          <th>Degree Name</th>
+                          <th>Course Number</th>
+                          <th>Required Course Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Information Syetems (INFS) MS</td>
+                          <td>INFS580</td>
+                          <td>Analytics and Big Data</td>
+                        </tr>
+                        <tr>
+                          <td>Information Syetems (INFS) MS</td>
+                          <td>INFS611</td>
+                          <td>Rapid Information Systems</td>
+                        </tr>
+                        <tr>
+                          <td>Information Syetems (INFS) MS</td>
+                          <td>INFS622</td>
+                          <td>Information Systems Analysis and Design</td>
+                        </tr>
+                      </tbody>
+
+                      <!-- For ISA -->
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>Degree Name</th>
+                          <th>Course Number</th>
+                          <th>Required Course Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Information Security and Assurance (ISA) MS</td>
+                          <td>ISA650</td>
+                          <td>Network Security Policy</td>
+                        </tr>
+                        <tr>
+                          <td>Information Security and Assurance (ISA) MS</td>
+                          <td>ISA652</td>
+                          <td>Security Audit and Testing</td>
+                        </tr>
+                      </tbody>
+
+
+
+                      <!-- For SWE -->
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>Degree Name</th>
+                          <th>Course Number</th>
+                          <th>Required Course Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Software Engineering (SWE) MS</td>
+                          <td>SWE69</td>
+                          <td>Object Oriented Programming</td>
+                        </tr>
+                        <tr>
+                          <td>Software Engineering (SWE) MS</td>
+                          <td>SWE637</td>
+                          <td>Software Testing</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+            </div>
+        </section>
+    </main>    
+    <!-- Footer -->
+    <footer>
+      <small>&copy; Anand Seshadri | G01351350 | 2023</small>
+    </footer>
+</body>
+</html>

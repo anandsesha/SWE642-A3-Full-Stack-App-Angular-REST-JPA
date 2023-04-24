@@ -1,0 +1,326 @@
+<!-- 
+Created by: Anand Seshadri
+GMU ID: G01351350 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Feedback Survey Form</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="javascript" href="./bootstrap.min.js">
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="assets/media/stylesheets/survey.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <!-- Header contains GMU logo and CS Department page and Home page links  -->
+    <header class="header">
+
+      <!-- Bootstrap Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-green nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/media/images/CS-dept-logo.png" height="40px" alt="CS Department Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- the loadPage function is called with the name of the page as an argument. The function will use
+               XMLHttpRequest to fetch the content of the page and set it as the innerHTML of the main section -->
+            <ul class="navbar-nav ml-auto flex">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="department.html">CS Department Info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="survey-form.html">Student Survey Form</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container main">
+      <!-- Survey Form -->
+      <form class="survey-form" action="index.html" autocomplete="on" method="post">
+        <h2 class="shadow-lg p-3 mb-4 rounded">Students Survey Form</h2>
+        <p id="greeting" style="text-align: center; font-style: italic; font-weight: 900;"></p>
+        <a class="cookie-link" onclick="prompt2()">Click here if this is not you!</a>
+        <p class="pt-2 pb-2">(Required fields are indicated by a <span class="star">*</span> mark )</p>
+        <fieldset>
+          <!--  -->
+          <dialog>
+            <p id="error-messages" style="color: red;"></p>
+            <button type="button" onclick="closedialog()">Close</button>
+          </dialog>
+          
+          <!-- Text boxes for first name, last name, street address, city, state, zip, telephone number, e-mail, 
+            and date of survey, which are required fields. -->
+          <div>
+            <label class="pt-2" for="name">Name : <span class="star">*</span></label>
+            <br />
+            <input
+              class="sub"
+              id="name"
+              type="text"
+              name="fname"
+              placeholder="First Name"
+              autofocus
+              required
+              style="width: 100%;"
+              autofocus="autofocus"
+            />
+            <input
+              class="sub"
+              id="name"
+              type="text"
+              name="lname"
+              placeholder="Last Name"
+              style="width: 100%;"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="pt-2" for="Address">Address : <span class="star">*</span></label><br />
+            <input
+              class="sub"
+              id="Street"
+              type="Address"
+              placeholder="Street"
+              required
+            />
+            <input
+              class="sub"
+              id="City"
+              type="Address"
+              placeholder="City"
+              required
+            />
+            <input
+              class="sub"
+              id="State"
+              type="Address"
+              placeholder="State"
+              required
+            />
+            <input
+              class="sub"
+              id="Zipcode"
+              type="number"
+              placeholder="Zipcode"
+              onblur="validateZip(this.value)"
+              required
+            />
+          </div>
+          <div>
+            <label class="pt-2" for="contact">Contact : <span class="star">*</span></label><br />
+            <input
+              class="sub"
+              id="Email"
+              type="email"
+              name="email"
+              placeholder="example@mailbox.com"
+              required
+            />
+            <input
+              class="sub"
+              id="Phone-Number"
+              type="number"
+              name="phone"
+              placeholder="Phone-Number"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="pt-2" for="DOS">Date of Survey : </label>
+            <input class="sub" id="DOS" type="date" name="DOS" style="width: 100%;" required />
+          </div>
+          <!--Checkboxes that allow prospective students to indicate what they liked most about the campus. 
+            The checkboxes should include: students, location, campus, atmosphere, dorm rooms, and sports.  -->
+          <div class="checkbox pt-2">
+            <label>What you liked most about the campus?</label><br />
+            <input id="students" type="checkbox" placeholder="v" />
+            <label for="students">students</label>
+            <input id="location" type="checkbox" placeholder="w" />
+            <label for="location">location</label>
+            <input id="campus" type="checkbox" placeholder="x" />
+            <label for="campus">campus</label>
+            <input id="atmosphere" type="checkbox" placeholder="y" />
+            <label for="atmosphere">atmosphere</label>
+            <input id="dorm rooms" type="checkbox" placeholder="z" />
+            <label for="dorm rooms">dorm rooms</label>
+            <input id="sports" type="checkbox" placeholder="A" />
+            <label for="sports">sports</label>
+          </div>
+          <!-- Radio buttons that allow the prospective students to indicate how they became interested in the
+             university. Options should include: friends, television, Internet, and other. -->
+          <div class="radio pt-2">
+            <label>How did you become interested in the university</label><br />
+            <input name="Radio" id="Friends" type="radio" />
+            <label for="Friends">Friends</label>
+            <input name="Radio" id="Television" type="radio" />
+            <label for="Television">Television</label>
+            <input name="Radio" id="Internet" type="radio" />
+            <label for="Internet">Internet</label>
+            <input name="Radio" id="Other" type="radio" />
+            <label for="Other">Other</label>
+          </div>
+          <!-- A dropdown list of options for the user to select the likelihood of him/her recommending this school to
+             other prospective students. The three options of the dropdown list are: Very Likely, Likely, Unlikely. -->
+          <div class="pt-2">
+            <label for="recommend"
+              >How likely would you recommending this school? (Choose an option from the drop down below)</label
+            >
+            <select class="form-control mb-2" name="recommend" id="">
+              <option value="">Very Likely</option>
+              <option value="">Likely</option>
+              <option value="">Unlikely</option>
+            </select>
+          </div>
+
+          <!-- An additional text box called Raffle. The user will be asked to enter at least ten comma separated 
+            numbers ranging from 1 through100 in the Raffle field. This information will be used to announce 
+            whether the student wins a free movie ticket. -->
+          <div>
+            <label class="pt-2" for="Raffle"
+              >Enter at least ten comma separated numbers ranging from 1
+              through100 in the Raffle field</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Raffle"
+              name="Raffle"
+            />
+          </div>
+
+          <!-- A text area for additional comments -->
+          <div>
+            <label class="pt-2" for="comments">Additional Comments</label>
+            <textarea
+              class="form-control"
+              name="Comments"
+              placeholder="Comments"
+              id="Comments"
+              cols="40"
+              rows="5"
+            ></textarea>
+          </div>
+          <!-- Using the datalist feature, enable the user to select high-school graduation month (January through December), followed by a text field for year. -->
+          <div class="">
+            <label class="pt-2" for="Month">High-school graduation Month</label><br />
+            <input
+              list="Month"
+              id="Months"
+              class="sub flex"
+              placeholder="Month"
+              name="Month"
+              style="width: 100%;"
+              required
+            />
+            <datalist id="Month">
+              <option value="January"></option>
+              <option value="February"></option>
+              <option value="March"></option>
+              <option value="April"></option>
+              <option value="May"></option>
+              <option value="June"></option>
+              <option value="July"></option>
+              <option value="August"></option>
+              <option value="September"></option>
+              <option value="October"></option>
+              <option value="November"></option>
+              <option value="December"></option>
+            </datalist>
+            <label class="pt-2" for="Year">High-school graduation Year</label><br />
+            <input
+              list="Year"
+              id="Years"
+              class="sub"
+              placeholder="Year"
+              name="Year"
+              style="width: 100%;" 
+              required
+            />
+            <datalist id="Year">
+              <option value="2015"></option>
+              <option value="2016"></option>
+              <option value="2017"></option>
+              <option value="2018"></option>
+              <option value="2019"></option>
+              <option value="2020"></option>
+              <option value="2021"></option>
+              <option value="2022"></option>
+              <option value="2023"></option>
+            </datalist>
+          </div>
+          <div class="data-group">
+            <label for="data" class="data-label">Data:</label>
+            <input type="text" width="100%" id="data" name="data" placeholder="Enter ten comma separated numbers from 1 to 100 (inclusive)" required>
+            <div id="error-output"></div>
+          </div>
+          <div class="data-group">
+            <label for="average" class="data-label">Average:</label>
+            <span id="average"></span>
+          </div>
+          <div class="data-group">
+            <label for="maximum" class="data-label">Maximum:</label>
+            <span id="maximum"></span>
+          </div>
+
+          <!-- Enabled the autocomplete attribute for the entire survey form that will
+          allow the user to automatically fill in his/her information (e.g.,
+          name, address, email, telephone, etc.) based on previous input. Use
+          placeholders where you deem appropriate (e.g., for the date format,
+          email, URL, etc.) that provides an example of the text and/or
+          format/pattern the user should enter. Use the required attribute for
+          fields as appropriate that forces the user to enter or select a value
+          before submitting the form.
+          In addition to using Bootstrap CSS classes, your web page makes
+          use of the George Mason University color scheme in some way. Green:
+          #006633 Yellow: #FFCC33 The CSS should also be used for fonts, colors,
+          background etc. You are free to be as creative as you’d like. At the
+          very least, the style sheet should include a rule that displays h1
+          elements in GMU Green (#006633), as well as create a custom style
+          class that could be used for any element on the page. The heading at
+          the top of the page should be inside a rectangular box with a solid
+          border in GMU green (#006633) and 5px width. The box should use a
+          box-shadow of your styling choice.
+          While your HTML5 pages must satisfy all the above criteria, they need
+          not be limited to them. Be creative! -->
+
+          <!-- Visually indicated to the user which fields are required -->
+
+          <!-- Provided a hyperlink to the CS Department Survey Page from the CS Dept Information Page. -->
+
+          <!-- The body of the window rendering your page has a tone light gray (or a color of your choice) 
+            background. -->
+
+          <!-- Submit and cancel buttons -->
+          <div class="flex">
+            <button type="submit" onclick="validate()">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </fieldset>         
+      </form>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <small>&copy; Anand Seshadri | G01351350 | 2023</small>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
